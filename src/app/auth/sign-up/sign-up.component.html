@@ -1,0 +1,151 @@
+<div class="row signup-container" *ngIf="!setup">
+  <div class="col-sm-6 main-left">
+    <div class="row">
+      <div class="col-md-2 col-md-3"></div>
+      <div class="col-sm-12 col-md-6">
+        <div class="dots">
+          <div class="dots-img"></div>
+        </div>
+        <div>
+          <h2>TokenTeams</h2>
+          <p>Tokenization, when applied to data security, is the process of substituting a sensitive data element with a non-sensitive
+            equivalent, referred to as a token, that has no extrinsic or exploitable meaning or value.</p>
+        </div>
+      </div>
+      <div class="col-sm-12 col-md-3"></div>
+    </div>
+  </div>
+  <div class="col-sm-6 main-right">
+    <div class="row">
+      <div class="col-md-2 d-none d-md-block"></div>
+      <div class="col-sm-12 col-md-7 text-center">
+        <h2>
+          <span class="text-green">Sign Up</span>
+        </h2>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col-md-2 col-md-3"></div>
+      <div class="col-sm-12 col-md-6">
+        <form (ngSubmit)="signUp()">
+          <ngb-alert *ngIf="alert.type" [type]="alert.type" (close)="closeAlert()">
+            {{ alert.message }}
+          </ngb-alert>
+
+          <div class="sign-projectM form-check">
+            <label class="form-check-label">
+              <input type="checkbox" name="project-manager" [(ngModel)]="user.is_project_owner" class="form-check-input"> Project Manager
+            </label>
+          </div>
+
+          <div class="form-group" *ngIf="user.is_project_owner">
+            <input class="form-control" name="company-name" [(ngModel)]="user.company_name" type="text" placeholder="Company Name">
+            <p *ngIf="errors && errors.company_name" class="form-text text-danger">{{errors.company_name[0]}}</p>
+          </div>
+
+          <div class="form-group">
+            <input class="form-control" name="first-name" [(ngModel)]="user.first_name" type="text" placeholder="First Name">
+            <p *ngIf="errors && errors.first_name" class="form-text text-danger">{{errors.first_name[0]}}</p>
+          </div>
+
+          <div class="form-group">
+            <input class="form-control" name="last-name" [(ngModel)]="user.last_name" type="text" placeholder="Last Name">
+            <p *ngIf="errors && errors.last_name" class="form-text text-danger">{{errors.last_name[0]}}</p>
+          </div>
+
+          <div class="form-group">
+            <input class="form-control" name="email" [(ngModel)]="user.email" type="email" placeholder="Email">
+            <p *ngIf="errors && errors.email" class="form-text text-danger">{{errors.email[0]}}</p>
+          </div>
+
+          <div class="form-group">
+            <input class="form-control" name="password" [(ngModel)]="user.password" type="password" placeholder="Password">
+            <p *ngIf="errors && errors.password" class="form-text text-danger">{{errors.password[0]}}</p>
+          </div>
+
+          <div class="form-group">
+            <input class="form-control" name="confirm-password" [(ngModel)]="user.confirm_password" type="password" placeholder="Confirm Password">
+            <p *ngIf="errors && errors.confirm_password" class="form-text text-danger">{{errors.confirm_password[0]}}</p>
+          </div>
+
+          <input type="submit" class="hide" (click)="signUp()">
+
+          <button class="btn btn-primary btn-login" (click)="signUp()">CREATE ACCOUNT</button>
+          <div class="clearfix"></div>
+        </form>
+        <div class="divider"></div>
+        <button class="btn btn-primary btn-google-sign">
+          <i class="fa fa-google" aria-hidden="true"></i>
+          <p>SIGN UP WITH GOOGLE</p>
+        </button>
+        <p class="btn-singup">Already have an account?
+          <a routerLink="/auth">Sign In</a>
+        </p>
+      </div>
+      <div class="col-sm-12 col-md-3"></div>
+      <p class="copy-right">Copyright 2017 by Token Teams, Inc</p>
+    </div>
+  </div>
+</div>
+<div class="row signup-container" *ngIf="setup">
+  <div class="col-sm-6 main-left">
+    <div class="row">
+      <div class="col-md-2 col-md-3"></div>
+      <div class="col-sm-12 col-md-6">
+        <div class="dots">
+          <div class="dots-img"></div>
+        </div>
+        <div>
+          <h2>TokenTeams</h2>
+          <p>Tokenization, when applied to data security, is the process of substituting a sensitive data element with a non-sensitive
+            equivalent, referred to as a token, that has no extrinsic or exploitable meaning or value.</p>
+        </div>
+      </div>
+      <div class="col-sm-12 col-md-3"></div>
+    </div>
+  </div>
+  <div class="col-sm-6 main-right">
+    <div class="row">
+      <div class="col-md-2 d-none d-md-block"></div>
+      <div class="col-sm-12 col-md-7 text-center">
+        <h2>
+          <span class="text-green">Set Up Your Account</span>
+        </h2>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-md-2 col-md-3"></div>
+      <div class="col-sm-12 col-md-6">
+        <form>
+          <div class="form-wrap">
+            <div class="radiobox bg-radio-checkbox radio-03">
+              <ul>
+                <li [ngClass]="{'active':user_role == 'EMPLOYER'}">
+                  <div class="radio-inr">
+                    <input id="male" type="radio" name="user_role" [(ngModel)]="user.user_role" value="EMPLOYER">
+                    <label for="male">Hire a freelancer</label>
+                  </div>
+                </li>
+                <li [ngClass]="{'active':user_role == 'FREELANCER'}">
+                  <div class="radio-inr">
+                    <input id="female" type="radio" name="user_role" [(ngModel)]="user.user_role" value="FREELANCER">
+                    <label for="female">Work as a freelancer</label>
+                  </div>
+                </li>
+              </ul>
+            </div>
+          </div>
+          <button class="btn btn-primary btn-login" (click)="next()">NEXT</button>
+          <div class="clearfix"></div>
+        </form>
+        <div class="divider"></div>
+        <div class="terms">Creating an accountmeans you're agree with our
+          <span>Terms Of Service, Privacy Policy</span>
+        </div>
+      </div>
+      <div class="col-sm-12 col-md-3"></div>
+      <p class="copy-right">Copyright 2017 by Token Teams, Inc</p>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,413 @@
+<section class="content">
+	<div class="task-manager-head white-box">
+		<h2>Task Manager</h2>
+		<div class="task-user-pic">
+			<ul>
+				<li><a href=""><img src="assets/img/user-01.jpg" alt="" /><span class="online"></span></a></li>
+				<li><a href=""><img src="assets/img/user-02.jpg" alt="" /><span class="away"></span></a></li>
+				<li><a href=""><img src="assets/img/user-03.jpg" alt="" /><span class="online"></span></a></li>
+				<li><a href=""><img src="assets/img/user-04.jpg" alt="" /><span class="away"></span></a></li>
+			</ul>
+		</div>
+	</div>
+	<div class="task-manager-body task-tabs">
+			<p-tabView>
+				<p-tabPanel header="Assigned" >
+						<div class="assigned-wrap white-box" *ngFor="let job of userJobs; let i = index">
+								<h6 class="clear">
+									<strong>{{job.name}}</strong>
+									<small>
+										<i>
+											<svg version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+											 viewBox="0 0 415.998 415.998" style="enable-background:new 0 0 415.998 415.998;" xml:space="preserve">
+												<g>
+													<g>
+														<rect x="111.999" y="176" width="192" height="16" />
+													</g>
+												</g>
+												<g>
+													<g>
+														<rect x="111.999" y="224" width="192" height="16" />
+													</g>
+												</g>
+												<g>
+													<g>
+														<rect x="111.999" y="272" width="192" height="16" />
+													</g>
+												</g>
+												<g>
+													<g>
+														<rect x="111.999" y="320" width="96" height="16" />
+													</g>
+												</g>
+												<g>
+													<g>
+														<circle cx="208.239" cy="48" r="12" />
+													</g>
+												</g>
+												<g>
+													<g>
+														<path d="M367.998,95.999c0-17.673-14.326-32-31.999-32h-44.424c-5.926-6.583-13.538-11.62-22.284-14.136
+							c-7.367-2.118-13.037-7.788-15.156-15.155C248.37,14.664,229.897,0,207.998,0c-21.898,0-40.37,14.663-46.134,34.706
+							c-2.122,7.376-7.806,13.039-15.182,15.165c-8.736,2.518-16.341,7.55-22.262,14.128H79.999c-17.674,0-32,14.327-32,32v287.999
+							c0,17.673,14.326,32,32,32c73.466,0,163.758,0,256,0c17.674,0,32-14.327,32-32C367.999,293.119,367.998,206.096,367.998,95.999z
+							 M128,95.741c0.11-14.066,9.614-26.606,23.113-30.496c12.71-3.662,22.477-13.426,26.127-26.116
+							C181.157,25.51,193.805,16,207.998,16c14.194,0,26.842,9.51,30.758,23.13c3.652,12.698,13.413,22.459,26.111,26.11
+							c13.618,3.917,23.13,16.566,23.13,30.758v16H128V95.741z M335.999,399.998c-85.455,0-170.77,0-256,0c-8.823,0-16-7.178-16-16
+							V95.999c0-8.822,7.177-16,16-16h34.742c-1.73,4.892-2.698,10.143-2.74,15.617v32.383h191.998v-32c0-5.615-0.992-10.991-2.764-16
+							h34.764c8.822,0,15.999,7.178,15.999,16c0,45.743-0.001,260.254,0.002,287.999C351.999,392.82,344.822,399.998,335.999,399.998z"
+														/>
+													</g>
+												</g>
+												<g>
+												</g>
+												<g>
+												</g>
+												<g>
+												</g>
+												<g>
+												</g>
+												<g>
+												</g>
+												<g>
+												</g>
+												<g>
+												</g>
+												<g>
+												</g>
+												<g>
+												</g>
+												<g>
+												</g>
+												<g>
+												</g>
+												<g>
+												</g>
+												<g>
+												</g>
+												<g>
+												</g>
+												<g>
+												</g>
+											</svg>
+										</i>
+										<span>{{(job.tasks)?.length}}</span>
+									</small>
+								</h6>
+								<div class="task-list" *ngIf="(job.tasks | json) != '{}'">
+									<ul class="ngx-dnd-container" (drop)="builderDrop($event,job.tasks)" ngxDroppable [model]="job.tasks">
+										<li class="ngx-dnd-item"  ngxDraggable *ngFor="let task of job.tasks; let j = index" [model]="task">
+											<div class="task-list-box">
+												<div class="checkbox">
+													<input id="check{{task._id}}" type="checkbox" name="check" value="check1">
+													<label for="check{{task._id}}">{{task.name}}</label>
+												</div>
+												<ng-container *ngIf="task.assignedUsers.length > 0; else other_content">
+													<div class="assigned-to dropdown">
+														<small>Assigned to</small>
+														<a href="" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+															{{task.assignedUsers[0].fullname}}
+															<span class="fa fa-angle-down"></span>
+														</a>
+														<ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
+															<li *ngFor="let user of task.assignedUsers">
+																<a href="#">{{user.first_name}} {{user.last_name}}</a>
+															</li>
+														</ul>
+													</div>
+												</ng-container>
+												<ng-template #other_content>
+													<div class="assigned-to unassigned-to">
+														<a href="" id="dropdownMenu2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">Unassigned
+															<span class="fa fa-angle-down"></span>
+														</a>
+														<ul class="dropdown-menu" aria-labelledby="dropdownMenu2">
+															<li>
+																<a href="#">Action</a>
+															</li>
+															<li>
+																<a href="#">Another action</a>
+															</li>
+														</ul>
+													</div>
+												</ng-template>
+												<div class="time-to">{{task.start_date | date: 'hh:mm:ss'}}</div>
+											</div>
+										</li>
+									</ul>
+									<div class="create-new-task">
+										<span #createnew *ngIf="job.isOpen == 0" (click)="taskForm(taskFormModal,i)">Create a New Task...</span>
+										<div class="create-hid" *ngIf="job.isOpen">
+											<div class="create-right" (click)="submit(i)">
+												<a>
+													<svg version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+													 width="78.369px" height="78.369px" viewBox="0 0 78.369 78.369" style="enable-background:new 0 0 78.369 78.369;"
+													 xml:space="preserve">
+														<g>
+															<path d="M78.049,19.015L29.458,67.606c-0.428,0.428-1.121,0.428-1.548,0L0.32,40.015c-0.427-0.426-0.427-1.119,0-1.547l6.704-6.704
+																			 c0.428-0.427,1.121-0.427,1.548,0l20.113,20.112l41.113-41.113c0.429-0.427,1.12-0.427,1.548,0l6.703,6.704
+																			 C78.477,17.894,78.477,18.586,78.049,19.015z" />
+														</g>
+														<g>
+														</g>
+														<g>
+														</g>
+														<g>
+														</g>
+														<g>
+														</g>
+														<g>
+														</g>
+														<g>
+														</g>
+														<g>
+														</g>
+														<g>
+														</g>
+														<g>
+														</g>
+														<g>
+														</g>
+														<g>
+														</g>
+														<g>
+														</g>
+														<g>
+														</g>
+														<g>
+														</g>
+														<g>
+														</g>
+													</svg>
+			
+												</a>
+											</div>
+											<div class="create-close" (click)="showCreateNew(createnew,i)">
+												<a>
+													<svg version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+													 width="357px" height="357px" viewBox="0 0 357 357" style="enable-background:new 0 0 357 357;" xml:space="preserve">
+														<g>
+															<g id="close">
+																<polygon points="357,35.7 321.3,0 178.5,142.8 35.7,0 0,35.7 142.8,178.5 0,321.3 35.7,357 178.5,214.2 321.3,357 357,321.3 
+						214.2,178.5 		" />
+															</g>
+														</g>
+														<g>
+														</g>
+														<g>
+														</g>
+														<g>
+														</g>
+														<g>
+														</g>
+														<g>
+														</g>
+														<g>
+														</g>
+														<g>
+														</g>
+														<g>
+														</g>
+														<g>
+														</g>
+														<g>
+														</g>
+														<g>
+														</g>
+														<g>
+														</g>
+														<g>
+														</g>
+														<g>
+														</g>
+														<g>
+														</g>
+													</svg>
+												</a>
+											</div>
+											<div class="create-user" (click)="showUsers()">
+												<a href="javascript:;">
+			
+													<svg version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+													 viewBox="0 0 563.43 563.43" style="enable-background:new 0 0 563.43 563.43;" xml:space="preserve">
+														<path d="M280.79,314.559c83.266,0,150.803-67.538,150.803-150.803S364.055,13.415,280.79,13.415S129.987,80.953,129.987,163.756
+				S197.524,314.559,280.79,314.559z M280.79,52.735c61.061,0,111.021,49.959,111.021,111.021S341.851,274.776,280.79,274.776
+				s-111.021-49.959-111.021-111.021S219.728,52.735,280.79,52.735z" />
+														<path d="M19.891,550.015h523.648c11.102,0,19.891-8.789,19.891-19.891c0-104.082-84.653-189.198-189.198-189.198H189.198
+				C85.116,340.926,0,425.579,0,530.124C0,541.226,8.789,550.015,19.891,550.015z M189.198,380.708h185.034
+				c75.864,0,138.313,56.436,148.028,129.524H41.17C50.884,437.607,113.334,380.708,189.198,380.708z" />
+														<g>
+														</g>
+														<g>
+														</g>
+														<g>
+														</g>
+														<g>
+														</g>
+														<g>
+														</g>
+														<g>
+														</g>
+														<g>
+														</g>
+														<g>
+														</g>
+														<g>
+														</g>
+														<g>
+														</g>
+														<g>
+														</g>
+														<g>
+														</g>
+														<g>
+														</g>
+														<g>
+														</g>
+														<g>
+														</g>
+													</svg>
+												</a>
+												<ss-multiselect-dropdown [hidden]="!selectUser" [texts]="myTexts" [settings]="mySettings" [options]="users" [(ngModel)]="task.assigned" (ngModelChange)="onChange($event)"></ss-multiselect-dropdown>
+												<!-- <select [hidden]="!selectUser" multiple name="job-assigned" [(ngModel)]="task.assigned">
+													<option *ngFor="let user of users" [ngValue]="user.id">
+														{{ user.name }}
+													</option>
+												</select> -->
+											</div>
+											<input (click)="hideUsers()" type="text" name="job-name" [(ngModel)]="task.name" class="input-css" placeholder="Enter Tasks" />
+										</div>
+	<div class="load-more" (click)="loadMore(job,i)">
+			<svg version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+			 viewBox="0 0 214.367 214.367" style="enable-background:new 0 0 214.367 214.367;" xml:space="preserve">
+				<path d="M202.403,95.22c0,46.312-33.237,85.002-77.109,93.484v25.663l-69.76-40l69.76-40v23.494
+				c27.176-7.87,47.109-32.964,47.109-62.642c0-35.962-29.258-65.22-65.22-65.22s-65.22,29.258-65.22,65.22
+				c0,9.686,2.068,19.001,6.148,27.688l-27.154,12.754c-5.968-12.707-8.994-26.313-8.994-40.441C11.964,42.716,54.68,0,107.184,0
+				S202.403,42.716,202.403,95.22z" />
+							<g>
+							</g>
+							<g>
+							</g>
+							<g>
+							</g>
+							<g>
+							</g>
+							<g>
+							</g>
+							<g>
+							</g>
+							<g>
+							</g>
+							<g>
+							</g>
+							<g>
+							</g>
+							<g>
+							</g>
+							<g>
+							</g>
+							<g>
+							</g>
+							<g>
+							</g>
+							<g>
+							</g>
+							<g>
+							</g>
+			</svg>
+			<h2>SEE MORE</h2>
+	</div>
+									</div>
+								</div>
+							</div>
+				</p-tabPanel>
+			
+			<p-tabPanel header="Unassigned">
+				unassigned
+			</p-tabPanel>
+			<p-tabPanel header="complete" >
+				complete
+			</p-tabPanel>
+		</p-tabView>
+	</div>
+	
+</section>
+
+<div class="paggination" *ngIf="pages_count>1">
+                  <ul  >
+                    <li class="bullet-arrow">
+                      <a (click)="nextForrword('forward')" ><i class="fa fa-chevron-left"></i></a>
+                    </li>
+                    <li *ngFor="let i of pagesArr; let index=index ">
+                      <a (click)="paginate(index+1)">{{index+1}}</a>
+                    </li>              
+                    <li class="bullet-arrow">
+                      <a (click)="nextForrword('next')"><i class="fa fa-chevron-right"></i></a>
+                    </li>
+                  </ul>           
+         </div>
+
+<!-- <section class="content">
+		<div class="white-box padding-25 contract-dtl">
+			<h2>Contract Details.</h2>
+			<div class="contract-name contract-dtl-div">
+				<label>HIRE:</label>
+				<span></span> <strong>Nicholas M.</strong>
+			</div>
+			<div class="contract-dtl-div">						
+				<label>Related Job listing:</label>
+				<strong>IOS Developer (#204125654987)</strong>
+				<div class="checkbox square">
+					<div class="checkbox-inr">
+						<input id="check111" type="checkbox" name="check" value="check111">
+						<label for="check111">Close the job post if the freelancer accept this offer (You can always repost it later.)</label>
+					</div>
+				</div>
+			</div>
+			<div class="contract-dtl-div edit-input-div">
+				<label>Contract title:</label>
+				<input type="text" name="" placeholder="IOS Developer"/>
+				<span class="edit-input-span"><i class="fa fa-edit"></i> Edit</span>
+			</div>
+			<div class="contract-dtl-div edit-input-div">
+				<label>Hourly rate:</label>
+				<input type="text" name="" placeholder="$50,00 /HR, 25 BNT/HR"/>
+				<span class="edit-input-span"><i class="fa fa-edit"></i> Edit</span>
+				<p>NIcholas M. profile rate  is $50.00 /HR, 25 BNT/HR</p>
+			</div>
+			<div class="contract-dtl-div limit-select">
+				<label>limit:</label>
+				<select class="selectpicker">
+					<option>10 HRS/WEEK</option>
+					<option>20 HRS/WEEK</option>
+					<option>30 HRS/WEEK</option>
+					<option>40 HRS/WEEK</option>
+				</select>
+				<p>NIcholas M. profile rate  is $50.00 /HR, 25 BNT/HR</p>
+			</div>
+			
+			<div class="additional-info">
+				<h2>Additional information</h2>
+				<div class="additional-info-textarea">
+					<textarea></textarea>
+				</div>
+				<div class="additional-info-attachfile">
+					<div class="drag-upload">
+						<label class="btn btn-block btn-primary"> <i class="fa fa-plus"></i> ATTACH FILE <input type="file" style="display: none;"></label>
+					</div>
+				</div>
+			</div>
+			<div class="contract-btm">
+				<div class="checkbox square">
+					<input id="check115" type="checkbox" name="check" value="check115">
+					<label for="check115">I understand and agree to the <a href="">Token Temas Marketplce user agreement, escrow instructions</a> and 
+					<a href="">corporate policies</a>.</label>
+				</div>
+				<div class="contract-btm-btn">
+					<button type="submit">HIRE NICHolas	M.</button>
+					<button type="submit">CANCEL</button>
+				</div>
+			</div>
+			
+		</div>
+	</section> -->

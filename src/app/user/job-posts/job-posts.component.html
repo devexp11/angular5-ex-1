@@ -1,0 +1,248 @@
+<section class="content">
+	<div class="white-box padding-25 job-form">
+		<div class="jobform-head">
+			<h2>Post a Job</h2>
+		</div>
+		<div class="jobform-body">
+			<form>
+				<div class="form-wrap">
+					<label class="form-label">NAME your job posting</label>
+					<input type="text" name="job-name" [(ngModel)]="job.name" placeholder="Job Name" class="form-wrap-input">
+				</div>
+				<div class="form-wrap">
+					<label class="pull-left form-label">Describe the work to be done</label>
+					<span class="characters-left">{{5000 - job.description.length}} characters left</span>
+					<textarea class="textarea-input" maxlength="5000" name="job-description" [(ngModel)]="job.description"></textarea>
+				</div>
+				<div class="form-wrap">
+					<label class="pull-left form-label">Attachments</label>
+					<span class="characters-left">you may attach up to 5 files under 100 MB.</span>
+					<div>
+						<p-fileUpload name="uploadPhoto[]" url="https://tokenteams.com/api/job/upload" multiple="multiple" accept="image/*,application/*,audio/*,video/*,text/*"
+						 auto="true" (onUpload)="onPhotoUpload($event)" maxFileSize="100000000" chooseLabel="DRAG OR upload project files">
+							<ng-template type="content">
+								<ul *ngIf="photoFiles.length">
+									<li *ngFor="let file of photoFiles">
+										{{file.name}} - {{file.size}} bytes
+									</li>
+								</ul>
+							</ng-template>
+						</p-fileUpload>
+					</div>
+				</div>
+				<div class="form-wrap">
+					<label class="form-label">What type of project do you have?</label>
+					<div class="radiobox bg-radio-checkbox radio-03">
+						<ul>
+							<li [ngClass]="{'active':job.job_type == 'ONETIME'}">
+								<div class="radio-inr">
+									<input id="male" type="radio" name="job_type" [(ngModel)]="job.job_type" value="ONETIME">
+									<label for="male">ONe-time project</label>
+								</div>
+							</li>
+							<li [ngClass]="{'active':job.job_type == 'ONGOING'}">
+								<div class="radio-inr">
+									<input id="female" type="radio" name="job_type" [(ngModel)]="job.job_type" value="ONGOING">
+									<label for="female">ongoing project</label>
+								</div>
+							</li>
+							<li [ngClass]="{'active':job.job_type == 'NOTSURE'}">
+								<div class="radio-inr">
+									<input id="not-sure" type="radio" name="job_type" [(ngModel)]="job.job_type" value="NOTSURE">
+									<label for="not-sure">i am not sure</label>
+								</div>
+							</li>
+						</ul>
+					</div>
+				</div>
+				<div class="form-wrap">
+					<label class="form-label">Enter skills needed</label>
+					<input type="text" name="job_skills[]" [(ngModel)]="job.job_skills" placeholder="Enter Skill Name" class="form-wrap-input">
+					<div class="choose-skill">
+						<a href="">JavaScript</a>
+						<a href="">Java</a>
+						<a href="">Apachec CXF</a>
+						<a href="">Website Development</a>
+						<a href="">Play Framework</a>
+						<a href="">HTML 5</a>
+						<a href="">Scala</a>
+						<a href="">IOS Development</a>
+						<a href="">
+							<i class="fa fa-plus"></i> Show More</a>
+					</div>
+				</div>
+				<div class="form-wrap">
+					<label class="form-label">How would you like to pay?</label>
+					<select class="select-custom" name="rate_per_hour" [(ngModel)]="job.rate_per_hour">
+						<option value="1">Pay by the hour1</option>
+						<option value="2">Pay by the hour2</option>
+						<option value="3">Pay by the hour3</option>
+					</select>
+				</div>
+				<div class="form-wrap">
+					<label class="form-label">Payment Method</label>
+					<div class="radiobox bg-radio-checkbox radio-05">
+						<ul>
+							<li [ngClass]="{'active':job.pay_method == 'ETH'}">
+								<div class="radio-inr">
+									<input id="eth" type="radio" name="pay_method" [(ngModel)]="job.pay_method" value="ETH">
+									<label for="eth">ETH</label>
+								</div>
+							</li>
+							<li [ngClass]="{'active':job.pay_method == 'TOKENS'}">
+								<div class="radio-inr">
+									<input id="tokens" type="radio" name="pay_method" [(ngModel)]="job.pay_method" value="TOKENS">
+									<label for="tokens">TOKENS</label>
+								</div>
+							</li>
+							<li [ngClass]="{'active':job.pay_method == 'EQUITY'}">
+								<div class="radio-inr">
+									<input id="equity" type="radio" name="pay_method" [(ngModel)]="job.pay_method" value="EQUITY">
+									<label for="equity">equity</label>
+								</div>
+							</li>
+							<li [ngClass]="{'active':job.pay_method == 'DEBT'}">
+								<div class="radio-inr">
+									<input id="debt" type="radio" name="pay_method" [(ngModel)]="job.pay_method" value="DEBT">
+									<label for="debt">debt</label>
+								</div>
+							</li>
+							<li [ngClass]="{'active':job.pay_method == 'GIFT'}">
+								<div class="radio-inr">
+									<input id="gift-credit" type="radio" name="pay_method" [(ngModel)]="job.pay_method" value="GIFT">
+									<label for="gift-credit">gift credit</label>
+								</div>
+							</li>
+						</ul>
+					</div>
+				</div>
+
+				<div class="form-wrap">
+					<label class="form-label">Desired experience level</label>
+					<div class="radiobox bg-radio-checkbox radio-03">
+						<ul>
+							<li [ngClass]="{'active':job.experience == 'ENTRY'}">
+								<div class="radio-inr">
+									<input id="entry-level" type="radio" name="experience" [(ngModel)]="job.experience" value="ENTRY">
+									<label for="entry-level">Entry Level</label>
+								</div>
+							</li>
+							<li [ngClass]="{'active':job.experience == 'INTERMIDIATE'}">
+								<div class="radio-inr">
+									<input id="intermediate" type="radio" name="experience" [(ngModel)]="job.experience" value="INTERMIDIATE">
+									<label for="intermediate">intermediate</label>
+								</div>
+							</li>
+							<li [ngClass]="{'active':job.experience == 'EXPERT'}">
+								<div class="radio-inr">
+									<input id="expert" type="radio" name="experience" [(ngModel)]="job.experience" value="EXPERT">
+									<label for="expert">expert</label>
+								</div>
+							</li>
+						</ul>
+					</div>
+				</div>
+				<div class="form-wrap howlong-expert">
+					<label class="form-label">How long do you expert this job to last?</label>
+					<div class="radiobox bg-radio-checkbox radio-05">
+						<ul>
+							<li [ngClass]="{'active':job.job_last == '6ormoremonth'}">
+								<div class="radio-inr">
+									<input id="month-6" type="radio" name="job_last" [(ngModel)]="job.job_last" value="6ormoremonth">
+									<label for="month-6">more than
+										<br/> 6 months</label>
+								</div>
+							</li>
+							<li [ngClass]="{'active':job.job_last == '3to6month'}">
+								<div class="radio-inr">
+									<input id="month-3-6" type="radio" name="job_last" [(ngModel)]="job.job_last" value="3to6month">
+									<label for="month-3-6">3 to 6
+										<br/>months</label>
+								</div>
+							</li>
+							<li [ngClass]="{'active':job.job_last == '1to3month'}">
+								<div class="radio-inr">
+									<input id="month-1-3" type="radio" name="job_last" [(ngModel)]="job.job_last" value="1to3month">
+									<label for="month-1-3">1 to 3
+										<br/>months</label>
+								</div>
+							</li>
+							<li [ngClass]="{'active':job.job_last == '1orlessmonth'}">
+								<div class="radio-inr">
+									<input id="month-less" type="radio" name="job_last" [(ngModel)]="job.job_last" value="1orlessmonth">
+									<label for="month-less">less then
+										<br/> 1 months</label>
+								</div>
+							</li>
+							<li [ngClass]="{'active':job.job_last == '1orlessweek'}">
+								<div class="radio-inr">
+									<input id="week-1" type="radio" name="job_last" [(ngModel)]="job.job_last" value="1orlessweek">
+									<label for="week-1">Less then
+										<br/> 1 Week</label>
+								</div>
+							</li>
+						</ul>
+					</div>
+				</div>
+
+				<div class="form-wrap">
+					<label class="form-label">What time commitment is required for this job?</label>
+					<div class="radiobox bg-radio-checkbox radio-03">
+						<ul>
+							<li [ngClass]="{'active':job.commitment == '30hrsormoreperweek'}">
+								<div class="radio-inr">
+									<input id="more-30" type="radio" name="commitment" [(ngModel)]="job.commitment" value="30hrsormoreperweek">
+									<label for="more-30">more than
+										<br/> 30 hrs/week</label>
+								</div>
+							</li>
+							<li [ngClass]="{'active':job.commitment == '30hrsorlessperweek'}">
+								<div class="radio-inr">
+									<input id="less-30" type="radio" name="commitment" [(ngModel)]="job.commitment" value="30hrsorlessperweek">
+									<label for="less-30">less then
+										<br/> 30hrs/week</label>
+								</div>
+							</li>
+							<li [ngClass]="{'active':job.commitment == 'dontknow'}">
+								<div class="radio-inr">
+									<input id="dont-know" type="radio" name="commitment" [(ngModel)]="job.commitment" value="dontknow">
+									<label for="dont-know">I don't
+										<br/> know yet</label>
+								</div>
+							</li>
+						</ul>
+					</div>
+				</div>
+				<div class="form-wrap do-freelancer">
+					<label class="form-label">Do you want freelancers to find nd apply to your job?</label>
+					<div class="radiobox">
+						<div class="radio-inr">
+							<input id="job-01" type="radio" name="freelancers" [(ngModel)]="job.freelancers" value="job-01">
+							<label for="job-01">Freelancers using TokenTeams.com and public search engines can find this job.</label>
+						</div>
+						<div class="radio-inr">
+							<input id="job-02" type="radio" name="freelancers" [(ngModel)]="job.freelancers" value="job-02">
+							<label for="job-02">only tokenteams users can find this job.</label>
+						</div>
+						<div class="radio-inr">
+							<input id="job-03" type="radio" name="freelancers" [(ngModel)]="job.freelancers" value="job-03">
+							<label for="job-03">Only freelancers i have invited can find this job.</label>
+						</div>
+					</div>
+				</div>
+
+				<div class="form-wrap">
+					<label class="form-label">screening questions</label>
+					<input type="text" name="questions" [(ngModel)]="job.questions" placeholder="Add Question..." class="form-wrap-input">
+				</div>
+
+				<div class="form-btm-btn">
+					<button type="submit" class="blue-btn" (click)="submit()">post job</button>
+					<button type="submit" class="blue-btn bdr-btn savedraft">Save draft</button>
+					<button type="submit" class="blue-btn bg-none bdr-none preview">preview</button>
+				</div>
+
+			</form>
+		</div>
+	</div>
+</section>

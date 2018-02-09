@@ -1,0 +1,30 @@
+<div class="row">
+  <div class="col-md-12">
+    <h1>Projects</h1>
+  </div>
+</div>
+
+<div class="row">
+  <div class="col-md-12">
+    <table class="table">
+      <thead>
+        <tr>
+          <th>Name</th>
+          <th>Description</th>
+          <th>Rate</th>
+          <th>Date</th>
+          <th>Freelancers</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let userProject of userProjects | async">
+          <td>{{userProject.project.name}}</td>
+          <td>{{userProject.project.description}}</td>
+          <td>{{userProject.project.rate}}</td>
+          <td>{{userProject.project.date}}</td>
+          <td></td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>

@@ -1,0 +1,118 @@
+import { Injectable } from '@angular/core';
+import { UtilsService } from '../utils.service';
+import { Headers, Http } from '@angular/http';
+import {Observable} from 'rxjs';
+import 'rxjs/add/operator/map';
+import _ from 'lodash';
+
+@Injectable()
+export class UserService {
+
+<<<<<<< HEAD
+  private apiURL: string = "/user";
+  private apiURL_Logs: string = "/timelogs";
+  private result: boolean;
+  private apiLocalLogsURL: string;
+  private apiTeamGetByIDRelURL: string = "/user/team/getTeamByUserId";
+  private apiTeamGetByIDURL: string;
+
+=======
+  private apiURL: string = "user/getallusers";
+  private apiURL_Logs: string = "/timelogs";
+  private result: boolean;
+  private apiLocalLogsURL: string;
+>>>>>>> 3f17baf5c3a297815a619f56d76f93c45f37b254
+  constructor(
+    public _utils: UtilsService,
+    private _http: Http
+  ) {
+    this.apiURL = this._utils.apiURL + this.apiURL;
+    this.apiURL_Logs = this._utils.apiURL + this.apiURL_Logs;
+<<<<<<< HEAD
+    this.apiLocalLogsURL = this._utils.backURL + '/user/log/getImages';
+    this.apiURL_Logs = 'user/log/getImages';
+    this.apiURL_Logs = this._utils.apiURL + this.apiURL_Logs;
+
+    this.apiTeamGetByIDURL = this._utils.backURL + this.apiTeamGetByIDRelURL;
+    console.log(this.apiTeamGetByIDURL);
+  }
+=======
+    this.apiLocalLogsURL = 'http://localhost:8080/user/log/getImages';
+  }
+  backURL:string="http://localhost:8080"
+>>>>>>> 3f17baf5c3a297815a619f56d76f93c45f37b254
+
+  getFreelancers(): Observable<any[]> {
+    return this._http.post(this.apiURL, '', { headers: this._utils.createHeaders() })
+    .map(res => {
+        return res.json().data;
+    });
+  }
+
+  getLogs(_userId: string): Observable<any[]> {
+    return this._http.post(`${this.apiURL_Logs}/${_userId}`, {}, { headers: this._utils.createHeaders() })
+    .map(res => {
+        return res.json();
+    });
+  }
+
+  getTeamEmployees(user_id): any {
+    return new Promise((resolve, reject) => {
+      this._http.get(`${this.apiTeamGetByIDURL}/${user_id}`, { headers: this._utils.createHeaders() })
+        .map(data => data.json())
+        .subscribe(data => {
+            if(data) {
+              resolve(data);
+            }
+            else {
+              reject('data success is false');
+            }
+          },
+          error => {
+            reject('some error happened');
+          }
+        );
+    });
+  }
+
+  getLogsByID(_userID: number): any {
+    let data: any = {};
+    data.user_id = _userID;
+
+    return new Promise((resolve, reject) => {
+      this._http.post(`${this.apiLocalLogsURL}`, data, { headers: this._utils.createHeaders() })
+        .map(d => d.json())
+        .subscribe(data => {
+          if(data) {
+            resolve(data);
+          }
+          else {
+            reject('data success is false');
+          }
+        },
+        error => {
+          reject('some error happened');
+        }
+      );
+    });
+  }
+
+  addEmployee(apiUrl: string, data: any) : any {
+    return new Promise((resolve, reject) => {
+      this._http.post(`${apiUrl}`, data, { headers: this._utils.createHeaders() })
+        .map(data => data.json())
+        .subscribe(data => {
+          if(data.success) {
+            resolve(data);
+          }
+          else {
+            reject('data success is false');
+          }
+        },
+        error => {
+          reject('some error happened');
+        }
+      );
+    });
+  }
+}

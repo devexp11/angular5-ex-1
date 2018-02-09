@@ -1,0 +1,157 @@
+<div class="job-found">
+  <h6>
+    <i class="">
+      <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px"
+        y="0px" viewBox="0 0 512 512" style="enable-background:new 0 0 512 512;" xml:space="preserve">
+        <g>
+          <g>
+            <path d="M405.333,42.667h-44.632c-4.418-12.389-16.147-21.333-30.035-21.333h-32.219C288.427,8.042,272.677,0,256,0
+s-32.427,8.042-42.448,21.333h-32.219c-13.888,0-25.617,8.944-30.035,21.333h-44.631C83.135,42.667,64,61.802,64,85.333v384
+C64,492.865,83.135,512,106.667,512h298.667C428.865,512,448,492.865,448,469.333v-384C448,61.802,428.865,42.667,405.333,42.667z
+ M170.667,53.333c0-5.885,4.781-10.667,10.667-10.667h37.917c3.792,0,7.302-2.021,9.219-5.302
+c5.844-10.042,16.135-16.031,27.531-16.031s21.688,5.99,27.531,16.031c1.917,3.281,5.427,5.302,9.219,5.302h37.917
+c5.885,0,10.667,4.781,10.667,10.667V64c0,11.76-9.573,21.333-21.333,21.333H192c-11.76,0-21.333-9.573-21.333-21.333V53.333z
+ M266.667,384H160c-5.896,0-10.667-4.771-10.667-10.667c0-5.896,4.771-10.667,10.667-10.667h106.667
+c5.896,0,10.667,4.771,10.667,10.667C277.333,379.229,272.563,384,266.667,384z M352,341.333H160
+c-5.896,0-10.667-4.771-10.667-10.667c0-5.896,4.771-10.667,10.667-10.667h192c5.896,0,10.667,4.771,10.667,10.667
+C362.667,336.563,357.896,341.333,352,341.333z M352,298.667H160c-5.896,0-10.667-4.771-10.667-10.667s4.771-10.667,10.667-10.667
+h192c5.896,0,10.667,4.771,10.667,10.667S357.896,298.667,352,298.667z M352,256H160c-5.896,0-10.667-4.771-10.667-10.667
+c0-5.896,4.771-10.667,10.667-10.667h192c5.896,0,10.667,4.771,10.667,10.667C362.667,251.229,357.896,256,352,256z" />
+          </g>
+        </g>
+        <g>
+        </g>
+        <g>
+        </g>
+        <g>
+        </g>
+        <g>
+        </g>
+        <g>
+        </g>
+        <g>
+        </g>
+        <g>
+        </g>
+        <g>
+        </g>
+        <g>
+        </g>
+        <g>
+        </g>
+        <g>
+        </g>
+        <g>
+        </g>
+        <g>
+        </g>
+        <g>
+        </g>
+        <g>
+        </g>
+      </svg>
+    </i>
+    <span> {{(userJobs | async)?.length}} JOBS FOUND</span>
+  </h6>
+  <div class="recent-application dropdown">
+    <a id="dropdownMenu101" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true"> Recent Application
+      <span class="fa fa-caret-down"></span>
+    </a>
+    <ul class="dropdown-menu" aria-labelledby="dropdownMenu101">
+      <li>
+        <a href="#">Action</a>
+      </li>
+      <li>
+        <a href="#">Another action</a>
+      </li>
+      <li>
+        <a href="#">Something else here</a>
+      </li>
+    </ul>
+  </div>
+</div>
+
+<section class="content" *ngIf="_jobService._utils.isProjectOwner()">
+  <div class="white-box padding-25 job-post" *ngFor="let job of userJobs | async">
+    <div class="job-post-head">
+      <h2>
+        <a href="javascript:;" routerLink="/user/job/{{job._id}}/details">{{job.name}} </a>
+      </h2>
+      <h3>
+        <a href="javascript:;" routerLink="/user/project/details">Teleport</a>
+      </h3>
+      <h6>
+        <a href="">
+          <i class="">
+            <svg version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px"
+              y="0px" viewBox="0 0 563.43 563.43" style="enable-background:new 0 0 563.43 563.43;" xml:space="preserve">
+              <path d="M280.79,314.559c83.266,0,150.803-67.538,150.803-150.803S364.055,13.415,280.79,13.415S129.987,80.953,129.987,163.756
+S197.524,314.559,280.79,314.559z M280.79,52.735c61.061,0,111.021,49.959,111.021,111.021S341.851,274.776,280.79,274.776
+s-111.021-49.959-111.021-111.021S219.728,52.735,280.79,52.735z" />
+              <path d="M19.891,550.015h523.648c11.102,0,19.891-8.789,19.891-19.891c0-104.082-84.653-189.198-189.198-189.198H189.198
+C85.116,340.926,0,425.579,0,530.124C0,541.226,8.789,550.015,19.891,550.015z M189.198,380.708h185.034
+c75.864,0,138.313,56.436,148.028,129.524H41.17C50.884,437.607,113.334,380.708,189.198,380.708z" />
+              <g>
+              </g>
+              <g>
+              </g>
+              <g>
+              </g>
+              <g>
+              </g>
+              <g>
+              </g>
+              <g>
+              </g>
+              <g>
+              </g>
+              <g>
+              </g>
+              <g>
+              </g>
+              <g>
+              </g>
+              <g>
+              </g>
+              <g>
+              </g>
+              <g>
+              </g>
+              <g>
+              </g>
+              <g>
+              </g>
+            </svg>
+          </i>
+          <small>34 Applications</small>
+        </a>
+      </h6>
+    </div>
+    <p>{{job.description}}</p>
+    <div class="job-post-ftr">
+      <h4>
+        <small>Skills Required: </small>
+        <!-- <a href="">Javascript</a> <a href="">NodeJS</a> <a href="">Electron</a> -->
+        <a href="" *ngFor="let skill of job.job_skills">
+          {{ skill }}
+        </a>
+      </h4>
+      <h5>{{job.date | date:'EEEE'}} {{job.date | date:'MMM d, y HH:mm'}}</h5>
+    </div>
+  </div>
+
+</section>
+
+<div class="paggination" *ngIf="pages_count>1">
+                  <ul  >
+                    <li class="bullet-arrow">
+                      <a (click)="nextForrword('forward')" ><i class="fa fa-chevron-left"></i></a>
+                    </li>
+                    <li *ngFor="let i of pagesArr; let index=index ">
+                      <a (click)="paginate(index+1)">{{index+1}}</a>
+                    </li>              
+                    <li class="bullet-arrow">
+                      <a (click)="nextForrword('next')"><i class="fa fa-chevron-right"></i></a>
+                    </li>
+                  </ul>           
+         </div>

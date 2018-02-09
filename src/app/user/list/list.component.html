@@ -1,0 +1,31 @@
+
+
+
+
+
+  <div class="row">
+    <div class="col-md-12">
+      <h1>Users List</h1>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col-md-12">
+      <table class="table">
+        <thead>
+          <tr>
+            <th>Name</th>
+            <th>Actions</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let freelancer of freelancers">
+            <td>{{freelancer.first_name}} {{freelancer.last_name}}</td>
+            <td>
+              <a [routerLink]="['/user/logs', freelancer._id]">View Logs</a>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>

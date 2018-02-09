@@ -1,0 +1,61 @@
+<div class="row login-container">
+  <div class="col-sm-6 main-left">
+    <div class="row">
+      <div class="col-md-2 col-md-3"></div>
+      <div class="col-sm-12 col-md-6">
+        <div class="dots">
+          <div class="dots-img"></div>
+        </div>
+        <div>
+          <h2>TokenTeams</h2>
+          <p>Tokenization, when applied to data security, is the process of substituting a sensitive data element with a non-sensitive equivalent, referred to as a token, that has no extrinsic or exploitable meaning or value.</p>
+        </div>
+      </div>
+      <div class="col-sm-12 col-md-3"></div>
+    </div>
+  </div>
+  <div class="col-sm-6 main-right">
+    <div class="row">
+      <div class="col-md-2 d-none d-md-block"></div>
+      <div class="col-sm-12 col-md-7 text-center">
+        <h2><span class="text-green">Sign In</span></h2>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col-md-2 col-md-3"></div>
+      <div class="col-sm-12 col-md-6">
+        <form (ngSubmit)="login()">
+          <ngb-alert *ngIf="alert.type" [type]="alert.type" (close)="closeAlert()">
+            {{ alert.message }}
+            <a routerLink="/auth/send-verification-code" *ngIf="alert.type == 'danger' && alert.message == 'Account is not verified yet.'">Send Verification Code</a>
+          </ngb-alert>
+    
+          <div class="form-group">
+            <p class="feild-text">E-MAIL</p>
+            <input class="form-control" name="email" [(ngModel)]="user.email" type="email" placeholder="Enter E-mail">
+            <p *ngIf="errors && errors.email" class="form-text text-danger">{{errors.email[0]}}</p>
+          </div>
+    
+          <div class="form-group">
+            <p class="feild-text">PASSWORD</p>
+            <input class="form-control" name="password" [(ngModel)]="user.password" type="password" placeholder="Enter Password">
+            <p *ngIf="errors && errors.password" class="form-text text-danger">{{errors.password[0]}}</p>
+          </div>
+    
+          <input type="submit" class="hide" (click)="login()">
+          <div class="submit-content">
+            <a class="forgot-password" routerLink="/auth/sign-up">Forgot password?</a>
+            <button class="btn btn-primary btn-login" (click)="login()">SIGN IN</button>  
+          </div>
+          <div class="clearfix"></div>
+        </form>
+        <div class="divider"></div>
+        <button class="btn btn-primary btn-google-sign"><i class="fa fa-google" aria-hidden="true"></i><p>SIGN IN WITH GOOGLE</p></button>
+        <p class="btn-singup">Don't have an account yet? <a [routerLink]="['/auth/sign-up']" >Sign Up</a></p>
+      </div>
+      <div class="col-sm-12 col-md-3"></div>
+    </div>
+    <p class="copy-right">Copyright 2017 by Token Teams, Inc</p>
+  </div>
+</div>

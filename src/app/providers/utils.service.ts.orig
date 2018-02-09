@@ -1,0 +1,99 @@
+<<<<<<< HEAD
+import { Injectable } from '@angular/core';
+import { environment } from '../../environments/environment';
+import { CookieService } from 'ngx-cookie';
+import { Headers } from '@angular/http';
+
+@Injectable()
+export class UtilsService {
+
+  app: string = "Token Teams";
+  appName: string = this.app.replace(" ","");
+  apiURL: string = `${environment.baseURL}/api/v1`;
+  baseURL: string = environment.baseURL;
+  backURL: string = 'http://localhost:8080';
+
+  constructor(
+    private _cookieService: CookieService
+  ) { }
+
+  ngOnInit() {
+  }
+
+  isLoggedIn() {
+    return this._cookieService.get(`${this.appName}_logged_in`) == 'true';
+  }
+
+  isProjectOwner() {
+    let user = this.user();
+    console.log(user);
+    return user.is_project_owner;
+  }
+
+  createHeaders() {
+    let headers = new Headers({ 'Content-Type': 'application/json' });
+    headers.append('Authorization', 'Bearer ' + this._cookieService.get(`${this.appName}_token`));
+    return headers;
+  }
+
+  userId() {
+    let user:any = this._cookieService.get(`${this.appName}_user`);
+    user = JSON.parse(user);
+    return user.id;
+  }
+
+  user() {
+    let user:any = this._cookieService.get(`${this.appName}_user`);
+    return JSON.parse(user);
+  }
+
+}
+=======
+import { Injectable } from '@angular/core';
+import { environment } from '../../environments/environment';
+import { CookieService } from 'ngx-cookie';
+import { Headers } from '@angular/http';
+
+@Injectable()
+export class UtilsService {
+
+  app: string = "Token Teams";
+  appName: string = this.app.replace(" ","");
+  apiURL: string = `${environment.baseURL}/api/`;
+  baseURL: string = environment.baseURL;
+
+  constructor(
+    private _cookieService: CookieService
+  ) { }
+
+  ngOnInit() {
+  }
+
+  isLoggedIn() {
+    return this._cookieService.get(`${this.appName}_logged_in`) == 'true';
+  }
+
+  isProjectOwner() {
+    let user = this.user();
+    return user.is_project_owner;
+  }
+
+  createHeaders() {
+    let headers = new Headers({ 'Content-Type': 'application/json' });
+    headers.append('Authorization', 'Bearer ' + this._cookieService.get(`${this.appName}_token`));
+    return headers;
+  }
+
+  userId() {
+    let user:any = this._cookieService.get(`${this.appName}_user`);
+    user = JSON.parse(user);
+    return user.id;
+  }
+
+  user() {
+    let user:any = this._cookieService.get(`${this.appName}_user`);
+    return JSON.parse(user);
+  }
+
+}
+>>>>>>> 3f17baf5c3a297815a619f56d76f93c45f37b254

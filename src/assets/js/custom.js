@@ -1,0 +1,37 @@
+$("#scroll-left").mCustomScrollbar({
+	axis:"yx",
+	theme:"3d"
+});
+
+
+$(function() {
+	$(document).on('change', ':file', function() {
+		var input = $(this),
+		numFiles = input.get(0).files ? input.get(0).files.length : 1,
+		label = input.val().replace(/\\/g, '/').replace(/.*\//, '');
+	input.trigger('fileselect', [numFiles, label]);
+	});
+	$(document).ready( function() {
+		$(':file').on('fileselect', function(event, numFiles, label) {
+			var input = $(this).parents('.input-group').find(':text'),
+				log = numFiles > 1 ? numFiles + ' files selected' : label;
+			if( input.length ) {
+				input.val(log);
+			}else {
+				if( log ) alert(log);
+			}
+		});
+	});
+});
+
+$( 'ul.nav.nav-tabs  a' ).click( function ( e ) {
+	e.preventDefault();
+	$( this ).tab( 'show' );
+});
+( function( $ ) {
+  fakewaffle.responsiveTabs( [ 'xs', 'sm' ] );
+} )( jQuery );
+
+$('.nav-icon').click(function(){
+	$('.mobile-navigation ul').slideToggle()
+});

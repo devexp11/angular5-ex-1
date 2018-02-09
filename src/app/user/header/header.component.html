@@ -1,0 +1,125 @@
+<header class="header">
+<div class="hdr-search">
+ <form>
+          <button type="submit"><svg version="1.1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 129 129" xmlns:xlink="http://www.w3.org/1999/xlink" enable-background="new 0 0 129 129">
+          <g>
+          <path d="M51.6,96.7c11,0,21-3.9,28.8-10.5l35,35c0.8,0.8,1.8,1.2,2.9,1.2s2.1-0.4,2.9-1.2c1.6-1.6,1.6-4.2,0-5.8l-35-35   c6.5-7.8,10.5-17.9,10.5-28.8c0-24.9-20.2-45.1-45.1-45.1C26.8,6.5,6.5,26.8,6.5,51.6C6.5,76.5,26.8,96.7,51.6,96.7z M51.6,14.7   c20.4,0,36.9,16.6,36.9,36.9C88.5,72,72,88.5,51.6,88.5c-20.4,0-36.9-16.6-36.9-36.9C14.7,31.3,31.3,14.7,51.6,14.7z"/>
+          </g>
+          </svg></button>
+    <p-autoComplete [(ngModel)]="find_text" [suggestions]="findedFreelancers" (completeMethod)="findFreelancers($event)"  styleClass= "ui-autocomplete-list-item"
+            [minLength]="1" placeholder="Find Freelancers..." name="find_text" field="email" (dropdownMode)="true"
+            (onSelect)="freelancerDetails($event)">
+           
+        </p-autoComplete>
+   </form>
+</div>
+
+    <!-- <div class="hdr-search">
+      <form>
+        <button type="submit"><svg version="1.1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 129 129" xmlns:xlink="http://www.w3.org/1999/xlink" enable-background="new 0 0 129 129">
+<g>
+<path d="M51.6,96.7c11,0,21-3.9,28.8-10.5l35,35c0.8,0.8,1.8,1.2,2.9,1.2s2.1-0.4,2.9-1.2c1.6-1.6,1.6-4.2,0-5.8l-35-35   c6.5-7.8,10.5-17.9,10.5-28.8c0-24.9-20.2-45.1-45.1-45.1C26.8,6.5,6.5,26.8,6.5,51.6C6.5,76.5,26.8,96.7,51.6,96.7z M51.6,14.7   c20.4,0,36.9,16.6,36.9,36.9C88.5,72,72,88.5,51.6,88.5c-20.4,0-36.9-16.6-36.9-36.9C14.7,31.3,31.3,14.7,51.6,14.7z"/>
+</g>
+</svg></button>
+        <input type="text" [(ngModel)]="find_text" name="find_text" placeholder="Find Freelancers..." (ngModelChange)="findFreelancers($event)"/>
+      </form>
+    </div> -->
+    <div class="jobs-btn">
+      <a href="javascript:;" routerLink="/user/alljobs" class="blue-btn btn-align">All jobs</a>
+      <a href="javascript:;" routerLink="/user/job/{{_utils.userId()}}/jobs" class="blue-btn bdr-btn btn-align">My Jobs</a>
+    </div>
+    
+    <div class="user-icon dropdown">
+        <a href="" id="user-dropdown" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+        <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+ viewBox="0 0 299.997 299.997" style="enable-background:new 0 0 299.997 299.997;" xml:space="preserve">
+<g>
+<g>
+  <path d="M149.996,0C67.157,0,0.001,67.158,0.001,149.997c0,82.837,67.156,150,149.995,150s150-67.163,150-150
+    C299.996,67.156,232.835,0,149.996,0z M150.453,220.763v-0.002h-0.916H85.465c0-46.856,41.152-46.845,50.284-59.097l1.045-5.587
+    c-12.83-6.502-21.887-22.178-21.887-40.512c0-24.154,15.712-43.738,35.089-43.738c19.377,0,35.089,19.584,35.089,43.738
+    c0,18.178-8.896,33.756-21.555,40.361l1.19,6.349c10.019,11.658,49.802,12.418,49.802,58.488H150.453z"/>
+</g>
+</g>
+<g>
+</g>
+<g>
+</g>
+<g>
+</g>
+<g>
+</g>
+<g>
+</g>
+<g>
+</g>
+<g>
+</g>
+<g>
+</g>
+<g>
+</g>
+<g>
+</g>
+<g>
+</g>
+<g>
+</g>
+<g>
+</g>
+<g>
+</g>
+<g>
+</g>
+</svg></a>
+        <ul class="dropdown-menu" aria-labelledby="user-dropdown">
+          <li class="green"><a href="#"><i class="fa fa-circle"></i>Online</a></li>
+          <li><a href="#"><i class="fa fa-circle"></i> Invisible</a></li>
+          <li role="separator" class="divider"></li>
+          <li><a href="#">Freelancer</a></li>
+          <li><a href="#">Employer</a></li>
+          <li role="separator" class="divider"></li>
+          <li><a href="#">My Profile</a></li>
+          <li><a href="#">Setting</a></li>
+          <li role="separator" class="divider"></li>
+          <li (click)="logout()"><a href="javascript:;">Log Out</a></li>
+        </ul>
+      </div>
+
+    <div class="post-btn">
+      <a href="javascript:;" routerLink="/user/jobpost" class="blue-btn"><i class=""><svg version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+viewBox="0 0 42 42" style="enable-background:new 0 0 42 42;" xml:space="preserve">
+<polygon points="42,19 23,19 23,0 19,0 19,19 0,19 0,23 19,23 19,42 23,42 23,23 42,23 "/>
+<g>
+</g>
+<g>
+</g>
+<g>
+</g>
+<g>
+</g>
+<g>
+</g>
+<g>
+</g>
+<g>
+</g>
+<g>
+</g>
+<g>
+</g>
+<g>
+</g>
+<g>
+</g>
+<g>
+</g>
+<g>
+</g>
+<g>
+</g>
+<g>
+</g>
+</svg></i>Job Posting</a>
+    </div>
+  </header>

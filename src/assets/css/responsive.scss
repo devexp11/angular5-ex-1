@@ -1,0 +1,909 @@
+@media (min-width: 1025px) and (max-width: 1170px) {
+  .hdr-search {
+    min-width: 280px;
+  }
+  .jobs-btn a {
+    margin-right: 5px;
+  }
+  .header {
+    padding: 15px 20px;
+  }
+  .content {
+    padding: 20px;
+  }
+  .contract-btm .checkbox label::before {
+    top: 5px;
+  }
+  .applicants-btn {
+    width: 100%;
+    float: none;
+    margin: 20px 0 0;
+    display: inline-block;
+    a {
+      width: 30%;
+      display: inline-block;
+      vertical-align: top;
+      float: none !important;
+      margin: 0 1%;
+    }
+  }
+  .applicants-user {
+    width: 36%;
+  }
+  .applicants-price {
+    width: 24%;
+  }
+  .applicants-tags {
+    width: 40%;
+  }
+  .applicants-li .applicants-tags a {
+    padding: 5px 15px;
+    font-size: 11px;
+    margin: 4px 4px 4px 0;
+  }
+  .emply-head ul.nav-tabs {
+    margin: 0;
+  }
+  .invite-freelancer-use, .invite-freelancer-rate {
+    width: 50%;
+    min-height: 60px;
+  }
+  .invite-freelancer-work {
+    width: 50%;
+    float: left;
+    margin: 0;
+    padding: 10px 0 0 75px;
+  }
+  .invite-freelancer-btn {
+    float: right;
+    width: auto;
+    vertical-align: top;
+    padding: 25px 0 0 0;
+  }
+  .messenger-l {
+    width: 100%;
+    margin-bottom: 25px;
+  }
+  .messenger-r {
+    width: 100%;
+  }
+  .messenger-head, .messenger-l-ul li, .chat-box {
+    padding: 15px;
+  }
+}
+
+@media (min-width: 992px) and (max-width: 1170px) {
+  .task-manager-body ul.nav.task-tabs {
+    border: 0;
+    float: none;
+    background: #fff;
+    width: 100%;
+    margin: 30px 0 0;
+  }
+  .assigned-wrap {
+    margin: 0 0 30px 0;
+    padding: 0;
+  }
+  .nav.task-tabs li {
+    a:hover::after, &.active a::after {
+      bottom: 0;
+    }
+  }
+  ul.nav.task-tabs li a {
+    padding: 10px 25px;
+  }
+  .emply-head .screen-user {
+    padding: 10px;
+    background: #f2f2f2;
+    margin: 10px;
+    float: none;
+    display: inline-block;
+    width: calc(100% - 20px);
+  }
+  .screenshort-box {
+    padding: 15px;
+  }
+  .screenshort-box-head h2 {
+    float: none;
+  }
+  .timeline-screenshort .screen-process {
+    float: none;
+    > span {
+      width: 100%;
+    }
+  }
+  .screen-process {
+    position: relative;
+    strong {
+      font-size: 15px;
+      margin: 0;
+      position: absolute;
+      right: 0;
+      top: -25px;
+    }
+  }
+  .screenshort-box-img {
+    height: 160px;
+  }
+}
+
+@media (max-width: 1024px) {
+  .applicants-btn {
+    width: 100%;
+    float: none;
+    margin: 20px 0 0;
+    display: inline-block;
+    a {
+      width: 30%;
+      display: inline-block;
+      vertical-align: top;
+      float: none !important;
+      margin: 0 1%;
+    }
+  }
+  .applicants-user {
+    width: 36%;
+  }
+  .applicants-price {
+    width: 24%;
+  }
+  .applicants-tags {
+    width: 40%;
+  }
+  .applicants-li .applicants-tags a {
+    padding: 5px 15px;
+    font-size: 11px;
+    margin: 4px 4px 4px 0;
+  }
+  .emply-head {
+    .screen-user {
+      padding: 10px;
+      background: #f2f2f2;
+      margin: 10px;
+      float: none;
+      display: inline-block;
+      width: calc(100% - 20px);
+    }
+    ul.nav-tabs {
+      margin: 0;
+    }
+  }
+  .screenshort-box {
+    padding: 15px;
+  }
+  .screenshort-box-head h2 {
+    float: none;
+  }
+  .timeline-screenshort {
+    .screen-process {
+      float: none;
+      > span {
+        width: 100%;
+      }
+      position: relative;
+      strong {
+        font-size: 15px;
+        margin: 0;
+        position: absolute;
+        right: 0;
+        top: -25px;
+      }
+    }
+    .screenshort-box-img {
+      height: 160px;
+    }
+  }
+  .user-tag {
+    padding: 0 0 15px;
+    margin: 0 0 15px;
+  }
+  .invite-freelancer-use, .invite-freelancer-rate {
+    width: 50%;
+    min-height: 60px;
+  }
+  .invite-freelancer-work {
+    width: 50%;
+    float: left;
+    margin: 0;
+    padding: 10px 0 0 75px;
+  }
+  .invite-freelancer-btn {
+    float: right;
+    width: auto;
+    vertical-align: top;
+    padding: 25px 0 0 0;
+  }
+  .messenger-l {
+    width: 100%;
+    margin-bottom: 25px;
+  }
+  .messenger-r {
+    width: 100%;
+  }
+  .messenger-head, .messenger-l-ul li, .chat-box {
+    padding: 15px;
+  }
+}
+
+@media (max-width: 991px) {
+  .left-panel {
+    width: 100%;
+    height: auto;
+    float: none;
+    position: relative;
+    top: 0;
+    bottom: 0;
+  }
+  .logo {
+    display: block;
+    height: auto;
+    padding: 15px;
+  }
+  .right-panel {
+    width: 100%;
+    float: none;
+  }
+  .content {
+    padding: 15px;
+  }
+  .navigation {
+    height: 100%;
+    padding-bottom: 15px;
+    display: none;
+    &.mobile-navigation {
+      display: block;
+      padding: 0;
+      ul {
+        display: none;
+        background: #2d2f38;
+        width: 200px;
+        position: absolute;
+        top: 70px;
+        right: 64px;
+        z-index: 1;
+        box-shadow: 0 0 30px 0 rgba(0, 0, 0, 0.2);
+      }
+    }
+    ul li.secound-nav {
+      margin-top: 0;
+    }
+  }
+  .nav-icon {
+    display: block;
+    width: 28px;
+    height: auto;
+    margin: 0;
+    position: absolute;
+    right: 65px;
+    top: 42px;
+    padding: 10px 0;
+    cursor: pointer;
+    z-index: 11;
+    span {
+      &:after, &:before {
+        content: "";
+        position: absolute;
+        left: 0;
+        top: -9px;
+      }
+      &:after {
+        top: 9px;
+        width: 100%;
+        height: 3px;
+        background-color: #ccc;
+        transition: all 0.3s;
+        backface-visibility: hidden;
+      }
+      position: relative;
+      display: block;
+      width: 100%;
+      height: 3px;
+      background-color: #ccc;
+      transition: all 0.3s;
+      backface-visibility: hidden;
+      &:before {
+        width: 100%;
+        height: 3px;
+        background-color: #ccc;
+        transition: all 0.3s;
+        backface-visibility: hidden;
+      }
+    }
+    &.nav-close span {
+      background-color: transparent;
+      &:before {
+        transform: rotate(45deg) translate(5px, 5px);
+      }
+      &:after {
+        transform: rotate(-45deg) translate(7px, -8px);
+      }
+    }
+  }
+  .header {
+    padding: 15px;
+  }
+  .user-icon {
+    position: absolute;
+    top: 36px;
+    right: 15px;
+    margin: 0;
+  }
+  .hdr-search {
+    min-width: 310px;
+  }
+  .jobs-btn a {
+    margin-right: 5px;
+  }
+  .emply-head .screen-user {
+    padding: 10px;
+    float: none;
+    width: 100%;
+    margin: 0 0 10px;
+  }
+  .responsive .panel-heading {
+    padding: 15px;
+    border-radius: 0;
+    font-weight: 400;
+    background: #f2f2f2;
+  }
+  .emply-head {
+    border-bottom: 0;
+    margin: 0;
+    padding: 10px;
+  }
+  .responsive {
+    .panel-default {
+      border: 0;
+      box-shadow: none;
+    }
+    .panel-title {
+      margin-top: 0;
+      margin-bottom: 0;
+      font-size: 14px;
+      color: inherit;
+      font-weight: 500;
+      text-transform: uppercase;
+      letter-spacing: 0.04em;
+    }
+    &.panel-group {
+      margin-bottom: 0;
+    }
+  }
+  .footer {
+    padding: 15px;
+    height: 52px;
+  }
+  .push {
+    height: 52px;
+  }
+  .wrapper {
+    margin-bottom: -52px;
+  }
+  .responsive {
+    &.panel-group {
+      margin: 0;
+      padding: 0 10px 10px;
+      background: #fff;
+    }
+    .panel-body {
+      padding: 0;
+    }
+    .project-box {
+      margin: 0 0 20px;
+      padding: 15px;
+    }
+  }
+  .task-manager-head {
+    padding: 15px;
+    h2 {
+      display: inline-block;
+      margin: 0;
+    }
+  }
+  .responsive .project-box:last-child {
+    margin-bottom: 0;
+  }
+  .form-btm-btn {
+    margin: 10px 0 0;
+  }
+  .panel-default > .panel-heading + .panel-collapse > .panel-body {
+    border: 0;
+  }
+  .assigned-wrap {
+    margin: 0 0 30px 0;
+    padding: 0;
+  }
+  .create-new-task {
+    padding: 0 10px 25px 30px;
+  }
+  .timeline-wrap .responsive .panel-heading {
+    padding: 10px 15px;
+  }
+  .timeline-tab-body {
+    padding: 15px;
+  }
+  .timeline-tab-body-head {
+    margin: 0 0 10px;
+  }
+  .timeline-wrap {
+    .panel-title a.accordion-toggle {
+      small, strong {
+        font-size: 18px;
+        display: inline-block;
+      }
+      > span {
+        height: 8px;
+        background: #c9e3ff;
+        border-radius: 4px;
+        width: 60%;
+        display: inline-block;
+        margin: 6px 0 0 20px;
+        float: right;
+        > span {
+          height: 8px;
+          background: #4da2ff;
+          border-radius: 4px;
+          display: block;
+        }
+      }
+    }
+    padding: 5px 0 0;
+  }
+}
+
+@media (max-width: 767px) {
+  .hdr-search {
+    min-width: initial;
+    width: 100%;
+    margin: 0 0 15px;
+  }
+  .blue-btn {
+    padding: 3px 10px 5px 10px;
+    font-size: 14px;
+    min-width: 60px;
+  }
+  .contract-dtl h2 {
+    font-size: 20px;
+    padding: 0 0 15px;
+  }
+  .additional-info {
+    h2 {
+      margin: 0 0 15px;
+    }
+    padding: 10px 0 0;
+  }
+  .contract-btm-btn button {
+    margin: 0 10px 0 0;
+    + button {
+      margin-top: 18px;
+    }
+  }
+  .padding-25 {
+    padding: 15px;
+  }
+  .contract-dtl-div {
+    padding: 10px 10px 10px 0;
+  }
+  .limit-select p {
+    line-height: normal;
+  }
+  .freelancer-user {
+    display: block;
+    position: relative;
+    padding: 5px 0 0 84px;
+    width: 100%;
+  }
+  .freelancer-reviews {
+    width: 100%;
+    float: none;
+    padding: 5px 0 0 84px;
+  }
+  .freelancer-contact {
+    float: none;
+    margin: 18px 0 0;
+  }
+  a.send-message {
+    margin: 0 0 0 5px;
+    padding: 8px 10px;
+  }
+  .job-post-head {
+    padding: 0 0 10px;
+    h2 {
+      margin: 0;
+      padding: 0;
+      font-size: 16px;
+      float: none;
+      a {
+        padding: 6px 15px 4px 15px;
+        font-size: 13px;
+        margin: 0 0 0 15px;
+      }
+    }
+    h6 {
+      float: none;
+      margin: 5px 0 0;
+      padding: 0;
+    }
+  }
+  .job-post p {
+    margin: 0 0 15px;
+    font-size: 14px;
+    line-height: 22px;
+  }
+  .job-post-ftr {
+    h4 {
+      small {
+        line-height: normal;
+        display: block;
+        margin: 0 0 10px 3px;
+      }
+      a {
+        padding: 5px 15px;
+        line-height: 20px;
+        font-size: 12px;
+        margin: 4px;
+      }
+      float: none;
+    }
+    h5 {
+      float: none;
+      margin: 5px 0 0 5px;
+      font-size: 13px;
+    }
+  }
+  .footer, .push {
+    height: auto;
+  }
+  .wrapper {
+    margin-bottom: 0;
+  }
+  .job-post-head .applicants-price {
+    width: auto;
+    float: none;
+    padding: 0;
+    margin: 10px 0 0;
+  }
+  .applicants-user {
+    width: 100%;
+    min-height: 80px;
+    float: none;
+  }
+  .applicants-price {
+    width: 100%;
+    float: none;
+    padding: 15px 0 0 10px;
+    margin: 0;
+    h5, h6 {
+      display: inline-block;
+      vertical-align: top;
+      margin: 0 5px 0 0;
+    }
+  }
+  .applicants-tags {
+    width: 100%;
+    float: none;
+  }
+  .applicants-btn {
+    width: 100%;
+    float: none;
+    margin: 10px 0 0;
+    display: inline-block;
+    a {
+      width: 15%;
+      &:last-child {
+        width: 60%;
+      }
+    }
+  }
+  .r-btn {
+    float: none;
+  }
+  .project-head {
+    a {
+      margin: 5px;
+      font-size: 16px;
+      float: left;
+    }
+    h2 {
+      font-size: 20px;
+      margin: 0 0 10px;
+    }
+    margin: 0 0 10px;
+  }
+  .project-body p {
+    margin: 0 0 15px;
+    font-size: 14px;
+    line-height: 20px;
+  }
+  .panel-default > .panel-heading + .panel-collapse > .panel-body {
+    border: 0;
+  }
+  .footer p {
+    margin: 0 0 10px;
+    font-size: 14px;
+    display: block;
+    float: none;
+    text-align: center;
+  }
+  .ftr-r {
+    float: none;
+    text-align: center;
+    a {
+      display: inline-block;
+      vertical-align: top;
+    }
+  }
+  .drag-upload label {
+    padding: 15px;
+    font-size: 15px;
+    white-space: normal;
+  }
+  .bg-radio-checkbox {
+    &.radiobox label {
+      padding: 20px 5px;
+      font-size: 14px;
+    }
+    &.radio-05 ul {
+      margin: 0 -5px;
+      li br {
+        display: none;
+      }
+    }
+    &.radiobox.radio-05 label {
+      padding: 5px;
+    }
+    li {
+      padding: 0 5px;
+    }
+  }
+  .form-btm-btn button {
+    margin: 0 10px 10px 0;
+    padding: 8px 15px;
+  }
+  .howlong-expert .bg-radio-checkbox.radio-05 {
+    ul li {
+      width: 33.33%;
+      margin-bottom: 15px;
+    }
+    label {
+      height: 50px;
+      display: table-cell;
+      vertical-align: middle;
+    }
+    .radio-inr {
+      display: table;
+    }
+  }
+  .profile-head {
+    display: block;
+    padding: 0 15px 15px 100px;
+    margin: 0 0 15px;
+    position: relative;
+    min-height: initial;
+    h3 {
+      margin: 0 0 10px;
+      font-size: 18px;
+      line-height: normal;
+      display: block;
+    }
+    h4 {
+      margin: 0 0 10px;
+      font-size: 16px;
+    }
+    > span {
+      width: 80px;
+      height: 80px;
+    }
+    p {
+      margin: 0 0 10px;
+      font-size: 14px;
+    }
+    h6 {
+      position: relative;
+      top: 0;
+      right: 0;
+    }
+  }
+  .profile .profile-tag a {
+    padding: 5px 15px;
+    line-height: 20px;
+    font-size: 11px;
+    margin: 3px;
+  }
+  .profile-tag {
+    padding: 0 0 10px;
+    margin: 0 0 15px;
+  }
+  .profile-btm-btn-l a {
+    margin: 0 10px 15px;
+  }
+  .overview-stats-wrap {
+    width: 100%;
+    float: none;
+  }
+  .overview-stats-r {
+    width: 100%;
+    float: none;
+    padding: 15px;
+  }
+  .overview-stats-l {
+    padding: 15px;
+  }
+  .overview-stats h2 {
+    margin: 0 0 15px;
+    padding: 0 0 15px;
+  }
+  .overview-stats-l p {
+    padding: 0 0 15px;
+    font-size: 14px;
+  }
+  .work-feedback {
+    padding: 15px;
+    margin: 0 0 15px;
+    .recent-application {
+      margin: 0 0 14px;
+      float: none;
+    }
+  }
+  .overview-stats h2 {
+    font-size: 20px;
+  }
+  .work-feedback-l {
+    width: 100%;
+    float: none;
+  }
+  .work-feedback-r {
+    width: 100%;
+    float: none;
+    text-align: left;
+    margin: 10px 0 0;
+  }
+  .work-feedback-ul li {
+    padding: 0 0 15px;
+    margin: 0 0 15px;
+  }
+  .view-portfolio-ul li {
+    width: 100%;
+    float: none;
+  }
+  .overview-portfolio {
+    padding: 15px;
+  }
+  .task-manager-head h2 {
+    display: block;
+    margin: 0 0 15px;
+  }
+  .task-user-pic {
+    float: none;
+    > ul > li {
+      display: inline-block;
+      margin: 0 15px 0 0;
+    }
+  }
+  .task-list-box {
+    .checkbox {
+      width: 100%;
+      float: none;
+    }
+    .assigned-to {
+      width: 100%;
+      float: none;
+      padding-left: 30px;
+    }
+  }
+  .task-list {
+    display: block;
+    padding: 0 15px;
+    > ul > li {
+      padding: 10px 0;
+    }
+  }
+  .task-list-box .checkbox {
+    margin: 0 0 8px;
+  }
+  .time-to {
+    width: 100%;
+    float: none;
+    margin: 10px 0 0;
+    text-align: left;
+    padding-left: 30px;
+  }
+  .task-list > ul > li {
+    padding: 15px 0;
+  }
+  .create-new-task {
+    padding: 0;
+  }
+  .create-user, .create-close {
+    margin: 0 10px 10px 0;
+  }
+  .create-hid {
+    input {
+      width: 100%;
+      float: none;
+      margin: 0;
+    }
+    width: 100%;
+    display: block;
+    padding: 10px 10px 20px;
+  }
+  .timeline-tab-body {
+    padding: 15px 5px;
+  }
+  .timeline-screenshort ul li {
+    padding: 15px;
+    width: 50%;
+  }
+  .bg-radio-checkbox ul {
+    margin: 0 -5px;
+  }
+  .invite-freelancer-list-box {
+    padding-left: 75px;
+  }
+  .invite-freelancer-use {
+    padding: 8px 0 0 0;
+    > span {
+      left: -75px;
+    }
+  }
+  .invite-freelancer-rate, .invite-freelancer-use {
+    width: 100%;
+  }
+  .invite-freelancer-work {
+    width: 100%;
+    padding: 0;
+  }
+  .invite-freelancer-btn {
+    float: left;
+    width: 100%;
+    vertical-align: top;
+    padding: 15px 0 0 0;
+    a {
+      padding: 6px 20px;
+    }
+  }
+  .chat-box-head {
+    margin-bottom: 15px;
+  }
+  ul.chat-box-ul {
+    .chat-box-head h4 {
+      margin: 10px 0 0;
+    }
+    li {
+      &.chat-user .chat-box-head {
+        h4 {
+          margin: 13px 0 0;
+        }
+        h6 {
+          float: right;
+          display: block;
+          width: 70%;
+          text-align: right;
+        }
+      }
+      .chat-box-bg {
+        margin: 0 !important;
+      }
+      margin: 0 0 20px;
+      .chat-box-head h6 {
+        float: left;
+        display: block;
+        width: 70%;
+        text-align: left;
+      }
+    }
+  }
+}
+
+@media (max-width: 479px) {
+  .bg-radio-checkbox {
+    &.radio-05 ul li, &.radio-03 ul li {
+      width: 100%;
+      margin: 0 0 15px;
+    }
+  }
+  .timeline-screenshort ul li {
+    padding: 15px;
+    width: 100%;
+  }
+}

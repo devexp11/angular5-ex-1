@@ -1,0 +1,51 @@
+<ng-template #freelancerFormModal let-c="close" let-d="dismiss">
+  <div class="modal-header">
+    <h4 class="modal-title">Add Task</h4>
+    <button type="button" class="close" aria-label="Close" (click)="d('Cross click')">
+      <span aria-hidden="true">&times;</span>
+    </button>
+  </div>
+  <div class="modal-body">
+    <form>
+      <ngb-alert *ngIf="alert.type" [type]="alert.type" (close)="closeAlert()">
+        {{ alert.message }}
+        <a routerLink="/auth/send-verification-code" *ngIf="alert.type == 'danger' && alert.message == 'Account is not verified yet.'">Send Verification Code</a>
+      </ngb-alert>
+
+      <div class="form-group">
+        <label>Email</label>
+        <input type="text" name="freelancer-email" [(ngModel)]="freelancerEmail" class="form-control">
+      </div>
+    </form>
+  </div>
+  <div class="modal-footer">
+    <button [disabled]="submitBtn.isLoading" type="button" class="btn-success btn bold" (click)="submit()">{{submitBtn.caption}}</button>
+    <button type="button" class="btn-primary btn bold" (click)="c('Cancel click')">Cancel</button>
+  </div>
+</ng-template>
+
+<div class="row">
+  <div class="col-md-12">
+    <h1 class="pull-left" *ngIf="job">{{job.name}} Freelancers</h1>
+    <button (click)="freelancerForm(freelancerFormModal)" class="btn btn-sm btn-primary pull-right">Add Freelancer</button>
+  </div>
+</div>
+
+<div class="row" *ngIf="jobFreelancers">
+  <div class="col-md-12">
+    <table class="table">
+      <thead>
+        <tr>
+          <th>Name</th>
+          <th>Date</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let freelancer of jobFreelancers">
+          <td>{{freelancer.user.first_name}} {{freelancer.user.last_name}}</td>
+          <td>{{freelancer.date | date:'medium'}}</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>

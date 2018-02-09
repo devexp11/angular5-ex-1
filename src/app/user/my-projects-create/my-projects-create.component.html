@@ -1,0 +1,97 @@
+<section class="content">
+	<div class="white-box padding-25 job-form">
+		<div class="jobform-head">
+			<h2>Create New Project</h2>
+		</div>
+		<div class="jobform-body">
+			<form>
+				<div class="form-wrap">
+					<label class="form-label">Name Your Project</label>
+					<input type="text" name="project-name" [(ngModel)]="project.name" placeholder="Project Name" class="form-wrap-input">
+				</div>
+				<div class="form-wrap">
+					<label class="pull-left form-label">Describe the work to be done</label>
+					<span class="characters-left">{{5000 - project.description.length}} characters left</span>
+					<textarea class="textarea-input" maxlength="5000" name="project-description" [(ngModel)]="project.description"></textarea>
+				</div>
+
+				<div class="form-wrap">
+					<label class="form-label">What type of project do you have?</label>
+					<div class="radiobox bg-radio-checkbox radio-03">
+						<ul>
+							<li [ngClass]="{'active':project.project_type == 'TOKEN'}"  >
+								<div class="radio-inr">
+									<input id="TOKEN" type="radio" name="project_type" [(ngModel)]="project.project_type" (click)="project_type('TOKEN')" value="TOKEN">
+									<label for="TOKEN">Tokens</label>
+								</div>
+							</li>
+							<li [ngClass]="{'active':project.project_type == 'EQUITY'}">
+								<div class="radio-inr">
+									<input id="EQUITY" type="radio" name="project_type" [(ngModel)]="project.project_type" (click)="project_type('EQUITY')" value="EQUITY">
+									<label for="EQUITY">Equity</label>
+								</div>
+							</li>
+							<li [ngClass]="{'active':project.project_type == 'DEBT'}">
+								<div class="radio-inr">
+									<input id="DEBT" type="radio" name="project_type" [(ngModel)]="project.project_type" (click)="project_type('DEBT')" value="DEBT">
+									<label for="DEBT">DEBT</label>
+								</div>
+							</li>
+						</ul>
+					</div>
+				</div>
+					<div class="equity-4 form-wrap">
+						<ng-template [ngIf]="equity">
+							<ul>
+								<li>
+									<label class="form-label">Your Equity symbol</label>
+									<input type="text" name="job-eq-symbol" [(ngModel)]="project.equity_symbol" placeholder="Enter Symbol (e.g. BNT)" class="form-wrap-input">
+								</li>
+								<li>
+									<label class="form-label">Equity Valution In USD</label>
+									<input type="text" name="job-eq-value-usd" [(ngModel)]="project.equity_value_in_usd" placeholder="(e.g. $1.000.000)" class="form-wrap-input">
+								</li>
+								<li>
+									<label class="form-label">Number of shares</label>
+									<input type="text" name="job-shares" [(ngModel)]="project.number_of_shares" placeholder="Shares Outstanding" class="form-wrap-input">
+								</li>
+								<li>
+									<label class="form-label">Equity per value</label>
+									<input type="text" name="job-eq-value" [(ngModel)]="project.equity_per_value" placeholder="(e.g. %1.50)" class="form-wrap-input">
+								</li>
+							</ul>
+						</ng-template>
+	
+						<ng-template [ngIf]="token">
+							<ul>
+								<li>
+									<label class="form-label">Your Token symbol</label>
+									<input type="text" name="job-tk-symbol" [(ngModel)]="project.token_symbol" placeholder="Enter Symbol (e.g. BNT)" class="form-wrap-input">
+								</li>
+								<li>
+									<label class="form-label">Token Valution In USD</label>
+									<input type="text" name="job-tk-value-usd" [(ngModel)]="project.token_value_in_usd" placeholder="(e.g. $1.000.000)" class="form-wrap-input">
+								</li>
+								<li>
+									<label class="form-label">Number of Token Issued</label>
+									<input type="text" name="job-tokens" [(ngModel)]="project.number_of_tokens" placeholder="Current Token Supply" class="form-wrap-input">
+								</li>
+								<li>
+									<label class="form-label">Token per value</label>
+									<input type="text" name="job-tk-value" [(ngModel)]="project.token_per_value" placeholder="(e.g. %1.50)" class="form-wrap-input">
+								</li>
+							</ul>
+						</ng-template>
+					</div>
+				
+
+				<div class="form-btm-btn">
+					<button type="submit" class="blue-btn"  (click)="submit()">Create Project</button>
+					<button type="submit" class="blue-btn light-red cancel-btn">Cancel</button>
+				</div>
+
+			</form>
+		</div>
+
+	</div>
+</section>

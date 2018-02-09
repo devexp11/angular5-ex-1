@@ -1,0 +1,187 @@
+<section class="content my-project">
+	<div class="task-manager-head white-box">
+		<h2>My Projects</h2>
+		<div class="r-btn">
+			<a href="javascript:;" routerLink="/user/myproject/createproject">
+				<i class="">
+					<svg version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+					 viewBox="0 0 42 42" style="enable-background:new 0 0 42 42;" xml:space="preserve">
+						<polygon points="42,19 23,19 23,0 19,0 19,19 0,19 0,23 19,23 19,42 23,42 23,23 42,23 " />
+						<g>
+						</g>
+						<g>
+						</g>
+						<g>
+						</g>
+						<g>
+						</g>
+						<g>
+						</g>
+						<g>
+						</g>
+						<g>
+						</g>
+						<g>
+						</g>
+						<g>
+						</g>
+						<g>
+						</g>
+						<g>
+						</g>
+						<g>
+						</g>
+						<g>
+						</g>
+						<g>
+						</g>
+						<g>
+						</g>
+					</svg>
+				</i> Create New Project</a>
+		</div>	
+	</div>
+	<div class="task-manager-body task-tabs">
+		<p-tabView>
+			<p-tabPanel header="Active Projects">
+				<div class="tab-pane active" id="active-projects">
+					<div class="project-box white-box padding-25" *ngFor="let projects of userProjects">
+						<div class="project-head">
+							<h2>{{projects.name}}</h2>
+							<a href="">
+								<i class="">
+									<svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 48 48">
+										<path d="M6 24c0-5.22 3.34-9.65 8-11.3V8.52C7.1 10.3 2 16.55 2 24s5.1 13.7 12 15.48V35.3C9.34 33.65 6 29.22 6 24zM30 8c-8.84 0-16 7.16-16 16s7.16 16 16 16 16-7.16 16-16S38.84 8 30 8zm0 28c-6.63 0-12-5.37-12-12s5.37-12 12-12 12 5.37 12 12-5.37 12-12 12z"
+										/>
+									</svg>
+								</i>
+								<span>24500 BNT</span>
+							</a>
+
+							<a href="">
+								<i>
+									<svg version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+									 width="420px" height="420px" viewBox="0 0 420 420" style="enable-background:new 0 0 420 420;" xml:space="preserve">
+										<g>
+											<g>
+												<path d="M210,53.041V210H58.167C60.825,291.574,127.78,356.89,210,356.89c83.904,0,151.925-68.02,151.925-151.924
+															C361.925,121.059,293.904,53.041,210,53.041z" />
+												<path d="M358.494,61.508C318.83,21.844,266.092,0,210,0S101.17,21.845,61.506,61.509C21.842,101.171,0,153.907,0,210
+															s21.842,108.828,61.506,148.492S153.908,420,210,420s108.83-21.845,148.494-61.509C398.158,318.828,420,266.093,420,210
+															S398.158,101.171,358.494,61.508z M210,392.357c-100.551,0-182.357-81.806-182.357-182.357S109.45,27.643,210,27.643
+															S392.357,109.448,392.357,210S310.551,392.357,210,392.357z" />
+											</g>
+										</g>
+										<g>
+										</g>
+										<g>
+										</g>
+										<g>
+										</g>
+										<g>
+										</g>
+										<g>
+										</g>
+										<g>
+										</g>
+										<g>
+										</g>
+										<g>
+										</g>
+										<g>
+										</g>
+										<g>
+										</g>
+										<g>
+										</g>
+										<g>
+										</g>
+										<g>
+										</g>
+										<g>
+										</g>
+										<g>
+										</g>
+									</svg>
+								</i>
+								<span> 224 Hours Worked</span>
+							</a>
+						</div>
+						<div class="project-body">
+							<p>{{projects.description}}</p>
+							<div class="user-tag">
+								<i>
+									<svg version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+									 viewBox="0 0 563.43 563.43" style="enable-background:new 0 0 563.43 563.43;" xml:space="preserve">
+										<path d="M280.79,314.559c83.266,0,150.803-67.538,150.803-150.803S364.055,13.415,280.79,13.415S129.987,80.953,129.987,163.756
+			S197.524,314.559,280.79,314.559z M280.79,52.735c61.061,0,111.021,49.959,111.021,111.021S341.851,274.776,280.79,274.776
+			s-111.021-49.959-111.021-111.021S219.728,52.735,280.79,52.735z" />
+										<path d="M19.891,550.015h523.648c11.102,0,19.891-8.789,19.891-19.891c0-104.082-84.653-189.198-189.198-189.198H189.198
+			C85.116,340.926,0,425.579,0,530.124C0,541.226,8.789,550.015,19.891,550.015z M189.198,380.708h185.034
+			c75.864,0,138.313,56.436,148.028,129.524H41.17C50.884,437.607,113.334,380.708,189.198,380.708z" />
+										<g>
+										</g>
+										<g>
+										</g>
+										<g>
+										</g>
+										<g>
+										</g>
+										<g>
+										</g>
+										<g>
+										</g>
+										<g>
+										</g>
+										<g>
+										</g>
+										<g>
+										</g>
+										<g>
+										</g>
+										<g>
+										</g>
+										<g>
+										</g>
+										<g>
+										</g>
+										<g>
+										</g>
+										<g>
+										</g>
+									</svg>
+								</i>
+								<a href="">Chano Palis,</a>
+								<a href="">Nazar Kulikov, </a>
+								<a href="">Uchenna Okafor, </a>
+								<a href="">Josh Charistensen</a>
+							</div>
+							<div class="url">
+								<a href="">
+									<i class="fa fa-link"></i> https://tokenteams.io</a>
+							</div>
+						</div>
+					</div>
+
+				</div>
+
+			</p-tabPanel>
+			<p-tabPanel header="Ended Projects">
+				Ended Projects
+			</p-tabPanel>
+		</p-tabView>
+	</div>
+	<div class="paggination" *ngIf="pages_count>1">
+            <ul>
+              <li class="bullet-arrow">
+                <a (click)="nextForrword('forward')" ><i class="fa fa-chevron-left"></i></a>
+              </li>
+              <li *ngFor="let i of pagesArr; let index=index ">
+                <a (click)="paginate(index+1)">{{index+1}}</a>
+              </li>              
+              <li class="bullet-arrow">
+                <a (click)="nextForrword('next')"><i class="fa fa-chevron-right"></i></a>
+              </li>
+            </ul>           
+   </div>
+</section>

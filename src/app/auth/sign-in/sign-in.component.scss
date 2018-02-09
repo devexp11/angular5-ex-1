@@ -1,0 +1,158 @@
+.login-container {
+  width: 100%;
+  height: 100vh;
+
+  .main-left {
+
+    background-color: #fff;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+    padding: 0px;
+    background: linear-gradient(135deg, #4DA1FF 0%, #2067B6 100%);
+
+    h2 {
+      color: #FFFFFF;
+      font-family: Roboto;
+      font-size: 24px;
+      font-weight: 500;
+      line-height: 28px;
+    }
+
+    p {
+      opacity: 0.6;
+      color: #FFFFFF;
+      font-family: Roboto;
+      font-size: 16px;
+      line-height: 26px;
+    }
+
+    .dots {
+      .dots-img {
+        position: absolute;
+        left: -50px;
+        top: -50px;
+        height: 124px;
+        width: 124px;
+        background-image: url("../../../assets/img/dots.png");
+        background-repeat: no-repeat;
+        background-size: 100%;
+      }
+    }
+  }
+
+  .main-right {
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+    padding: 0px;
+
+    .text-green {
+      color: #000000;
+      font-family: Roboto;
+      font-size: 24px;
+      line-height: 28px;
+    }
+    
+    .feild-text {
+      color: #94949E;
+      font-family: Roboto;
+      font-size: 12px;
+      line-height: 14px;
+      margin-top: 34px;
+      margin-bottom: 8px;
+    }
+
+    .form-control {
+      border-radius: 2px;
+      height: 48px;
+      background-color: #E5F1FF;
+    }
+
+    .submit-content {
+      
+      display: flex;
+      align-items: center;
+
+      .forgot-password {
+        flex: 1;
+        color: #4DA1FF;
+        font-family: Roboto;
+        font-size: 14px;
+        line-height: 16px;
+      }
+
+      .btn-login {
+        height: 48px;
+        width: 128px;
+        border-radius: 4px;
+        background-color: #4DA1FF;
+        color: #FFFFFF;
+        font-family: Roboto;
+        font-size: 16px;
+        font-weight: 500;
+        letter-spacing: 1px;
+        line-height: 16px;
+        text-align: center;
+      }
+    }
+
+    .divider {
+      margin: 20px 0px;
+      height: 1px;
+      width: 100%;
+      border-radius: 2px;
+      background-color: #E5E5E5;
+    }
+
+    .btn-google-sign {
+      display: flex;
+      align-items: center;
+      height: 48px;
+      width: 100%;
+      border-radius: 4px;
+      background-color: #4285F4;
+      color: #FFFFFF;
+      font-family: Roboto;
+      font-size: 16px;
+      font-weight: 500;
+      letter-spacing: 1px;
+      line-height: 16px;
+      padding-left: 30px;
+      p {
+        margin: 0;
+        text-align: center;
+        flex: 1;
+      }
+    }
+
+    .btn-singup {
+      margin-top: 34px;
+      text-align: center;
+      color: #4DA1FF;
+      font-family: Roboto;
+      font-size: 14px;
+      line-height: 16px;
+    }
+
+    .copy-right {
+      position: absolute;
+      bottom: 20px;
+      width: 100%;
+      text-align: center;
+      color: #94949E;
+      font-family: Roboto;
+      font-size: 16px;
+      font-weight: 500;
+      line-height: 19px;
+    }
+  }
+
+}
+
+auth-sign-in {
+  display: block;
+}

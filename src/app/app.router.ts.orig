@@ -1,0 +1,53 @@
+<<<<<<< HEAD
+import { ModuleWithProviders } from '@angular/core';
+import { Routes, RouterModule } from '@angular/router';
+import { HomeComponent } from './home/home.component';
+import { OnlyLoggedinUserGuard } from './guards/index';
+import { ComingSoonComponent } from './coming-soon/coming-soon.component';
+
+const routes: Routes = [
+  { path: '', pathMatch: 'full', component: HomeComponent },
+  {
+    path: 'auth',
+    loadChildren: 'app/auth/auth.module#AuthModule'
+  },
+  {
+    path: 'user',
+    /*canActivate: [OnlyLoggedinUserGuard],*/
+    loadChildren: 'app/user/user.module#UserModule'
+  },
+  // {
+  //   path: 'page-not-found',
+  //   loadChildren: 'app/not-found/not-found.module#NotFoundModule'
+  // },
+  { path: '**', redirectTo: 'page-not-found' }
+];
+
+export const AppRouter: ModuleWithProviders = RouterModule.forRoot(routes);
+=======
+import { ModuleWithProviders } from '@angular/core';
+import { Routes, RouterModule } from '@angular/router';
+import { HomeComponent } from './home/home.component';
+import { OnlyLoggedinUserGuard } from './guards/index';
+import { ComingSoonComponent } from './coming-soon/coming-soon.component';
+
+const routes: Routes = [
+  { path: '', pathMatch: 'full', component: HomeComponent },
+  {
+    path: 'auth',
+    loadChildren: 'app/auth/auth.module#AuthModule'
+  },
+  {
+    path: 'user',
+    canActivate: [OnlyLoggedinUserGuard],
+    loadChildren: 'app/user/user.module#UserModule'
+  },
+  // {
+  //   path: 'page-not-found',
+  //   loadChildren: 'app/not-found/not-found.module#NotFoundModule'
+  // },
+  { path: '**', redirectTo: 'page-not-found' }
+];
+
+export const AppRouter: ModuleWithProviders = RouterModule.forRoot(routes);
+>>>>>>> 3f17baf5c3a297815a619f56d76f93c45f37b254
